@@ -1,0 +1,10 @@
+
+   
+<h1>Activez votre compte</h1>
+<p>  Bienvenue  {{ username }},</p>
+<p>Hey ! Merci d'avoir crée votre compte sur Quiz, j'espère que le site vous plait.</p>
+<p>Avant de commencer, nous devons vérifier votre adresse e-mail.</p>
+<p><a href="{{ url('confirm_account', {"token": token}) }}" target="_blank"> Verifier votre email</a></p>
+<p>Ce lien expirera dans 3 heures</p>
+
+

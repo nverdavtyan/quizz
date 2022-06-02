@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CreateQuizController!{% endblock %}
+
+{% block main %}
+
+   <div class="container mt-4">
+        <h1 class="default__title">Créer une catégorie</h1>
+
+{{ form_start(form) }}
+        {{ form_rest(form) }}
+<button class="btn btn-secondary"><i style="{{ styleIcon|default('')  }}" class="{{ icon|default('')  }}"></i>{{button|default('Enregistrer') }}</button>
+{{ form_end(form) }}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title}} Accueil! {% endblock %}
+
+{% block main %}
+<!-- Carte -->
+    <div class="container">
+        <div class="row">
+
+              <!-- Découvrir nos quizz -->
+
+    <div class="card mb-3 admin__card" style="width: 100%; ">
+            <div class="all__center">
+        <div class="card-body" style="">
+          <h2 class="card__title text-center">Nos quizz</h2>
+                                  <img class="card__image" src="{{ url('home')}}/images/category.png "   alt="">
+          <p class="text-muted">Accéder à cette page pour pouvoir essayer nos quizz</p>
+          <div class="text-center">
+            <a href="{{ path('categorie.list') }}" class="btn btn-secondary text-centery " >Catégories</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Découvrir nos quizz -->
+
+
+     {% if roles %}
+
+                    <!-- Admin -->
+      <div class="card mb-3 admin__card" style="width: 100%; ">
+        <div class="card-body">
+          <h2 class="card__title text-center" >Panel administrateur</h2>
+                                  <img class="card__image" src="{{ url('home')}}/images/admin.png "   alt="">
+          <p class="text-muted">Accéder à cette page pour pouvoir gérer les utilisateurs</p>
+          <div class="text-center">
+            <a href="{{ path('admin.home') }}" class="btn btn-secondary text-centery" >Admin panel</a> 
+          </div>
+        </div>
+      </div>
+      <!-- Admin -->
+        {% endif %}
+
+
+
+
+  
+
+
+                            <!-- Historique -->
+                            <div class="card mb-3 admin__card" style="width: 100%; ">
+                                <div class="card-body">
+                                  <h2 class="card__title text-center" >Historique</h2>
+                                  <img class="card__image" src="{{ url('home')}}/images/history.png "   alt="">
+                                  <p class="text-muted">Accéder à cette page pour pouvoir consulter l'historique</p>
+                                  <div class="text-center">
+                                    <a href="{{ path('history.index') }}" class="btn btn-secondary text-centery">Consulter mon historique</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Historique -->
+
+  {% if connected %}
+
+                            <!-- Vos informations -->
+                            <div class="card mb-3 admin__card" style="width: 100%; ">
+                                <div class="card-body">
+                                  <h2 class="card__title text-center" >Informations</h2>
+                                  <img class="card__image" src="{{ url('home')}}/images/profile.png "   alt="">
+                                  <p class="text-muted">Accéder à cette page pour pouvoir consulter vos informations</p>
+                                  <div class="text-center">
+                                    <a href="{{ path('app_update_profile', {id: userId}) }}" class="btn btn-secondary" >Modifier mon profil</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Vos informations -->
+
+
+                                                        <!-- Create quizz -->
+            <div class="card mb-3 admin__card" style="width: 100%; ">
+                <div class="card-body">
+                  <h2 class="card__title text-center">Créer votre  quizz</h2>
+                <img class="card__image" src="{{ url('home')}}/images/quiz.png"   alt="">
+                  <p class="text-muted">Accéder à cette page pour pouvoir créer votre quizz</p>
+                  <div class="text-center">
+                    <a href="{{ path('app_create_quiz') }}" class="btn btn-secondary text-centery" >Créez votre quizz</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Create Quizz -->
+          </div>
+        </div>
+
+      <!-- Carte -->
+
+        {% endif %}
+
+{% endblock %}
+
+

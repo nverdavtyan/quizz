@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} | Catégories{% endblock %}
+
+{% block main %}
+    <div class="categories__container">
+    {% for categorie in categories %}
+        <div class="card mb-3 category_cards" style="width: 100%;">
+            <div class="row no-gutters">
+                <div class="col-md-4 category__image--ctn" >
+                    <img src="/images/{{ categorie.id }}.png" class="card-img category__image" >
+                </div>
+                <div class="col-md-8" style="display: flex; align-items: center;">
+                    <div class="card-body" style="text-align: center;">
+                        <h5 class="card-title"></h5>
+                        <div class="category__title name"><span class="res">{{ categorie.name }}</span></div>
+                        <a href="{{ path('categorie.index', {id: categorie.id, name: categorie.formatName}) }}" class="btn btn-secondary">Accéder au quizz</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    {% endfor %}
+
+    </div>
+
+
+
+
+{% endblock %}
