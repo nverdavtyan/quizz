@@ -50,7 +50,7 @@ class UsersAuthenticator extends AbstractLoginFormAuthenticator
         $request->getSession()->set(Security::LAST_USERNAME, $email);
 
         if (!$email) {
-            throw new CustomUserMessageAuthenticationException('fuck');
+            throw new CustomUserMessageAuthenticationException('Try again');
         }
         return new Passport(
             new UserBadge($email),
